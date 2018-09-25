@@ -1,6 +1,6 @@
 # KBEngine- An Open Source MMOG Server    Engine
 
-![kbelogo1](C:\Users\Administrator\Desktop\kbelogo1.png)
+![kbelogo1](pics\kbelogo1.png)
 
 
 
@@ -37,3 +37,4 @@ technology, allowing them to concentrate on game logic development, to quickly c
 
 
 ## Context View
+
