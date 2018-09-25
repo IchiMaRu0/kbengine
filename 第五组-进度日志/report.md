@@ -37,7 +37,6 @@ technology, allowing them to concentrate on game logic development, to quickly c
 
 ### Overview  
 
-===
 **Acquirers:**&nbsp;[YOLO Technology](https://www.comblockengine.com/aboutUs.html) is managing and growing the company and its assets.  
 
 
