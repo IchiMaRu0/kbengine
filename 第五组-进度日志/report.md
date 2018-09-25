@@ -2,8 +2,6 @@
 
 ![kbelogo1](https://github.com/IchiMaRu0/kbengine/blob/master/%E7%AC%AC%E4%BA%94%E7%BB%84-%E8%BF%9B%E5%BA%A6%E6%97%A5%E5%BF%97/pics/kbelogo1.png)
 
-
-
 ## Abstract
 
 An open source MMOG server engine. 
