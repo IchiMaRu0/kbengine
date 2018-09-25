@@ -71,13 +71,17 @@ Developers deploy the Kbengine software and try to polish it.
 
 **Competitors:**&nbsp;Undoubtedly, competitors are interested in the development of Kbengine since they are willing to provide a competing service. [Unreal](https://www.unrealengine.com/zh-CN/what-is-unreal-engine-4) and [Unity3D](https://unity3d.com/cn) are two big names with the most users worldwide. The former one is widely viewed as one of the most powerful engine for  and the latter one is suitable for beginners around the world. Nevertheless, when it comes to the game server engine or framework, [POMELO](http://pomelo.netease.com/) and [SKYNET](https://github.com/korialuo/skynet) are two that win most reputation.
 
+<<<<<<< HEAD
 
+=======
+<a name="fig1"><div align=center>![Figure 1](https://github.com/IchiMaRu0/kbengine/blob/master/%E7%AC%AC%E4%BA%94%E7%BB%84-%E8%BF%9B%E5%BA%A6%E6%97%A5%E5%BF%97/pics/figure1.jpeg)</div></a>
+>>>>>>> dc4f851823b059905ba350c040c7c1d884b92405
 
 ### Power-Interest Grid  
 
 The power-interest grid contains the main stakeholder categories, as shown in <a href="#fig2">Figure 2</a>. There is no doubt that the core developer team takes the leading position in the figure. Suppliers like Github are also significant because the open source project highly depends on these third-party dependencies. Whereas, they apparently have little interest in this project. On the contrary, it is the users that have the highest interest while possess the lowest power.   
 
-
+<a name="fig2"><div align=center>![Figure 2](https://github.com/IchiMaRu0/kbengine/blob/master/%E7%AC%AC%E4%BA%94%E7%BB%84-%E8%BF%9B%E5%BA%A6%E6%97%A5%E5%BF%97/pics/figure2.jpeg)</div></a>
 
 
 
