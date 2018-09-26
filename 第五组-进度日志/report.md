@@ -25,6 +25,8 @@ The engine is written in C++, and saves developers from having to re-implement c
 * Introduction
 * Stakeholders
 * Context View
+* Development View
+* Functional View
 * ...
 
 
@@ -111,10 +113,10 @@ KBEngine is an open source game server engine. The client can communicate with t
 
 KBEngine is a server engine, but it can be combined with some client engines to form a complete game client. It is aimed at client development. By using its SDK, what the client developer needs to do is just receiving event data and completing the rendering. Now it supports several of the most popular client engines on the market, including:
 
-* Ogre    [https://www.ogre3d.org/](https://www.ogre3d.org/)
-* Unity3d    [https://unity3d.com](https://unity3d.com)
-* UnrealEngine    https://www.unrealengine.com
-* Cocos2dx    [http://www.cocos.com](http://www.cocos.com)
+* Ogre        [https://www.ogre3d.org/](https://www.ogre3d.org/)
+* Unity3d        [https://unity3d.com](https://unity3d.com)
+* UnrealEngine        https://www.unrealengine.com
+* Cocos2dx        [http://www.cocos.com](http://www.cocos.com)
 * HTML5-based engines or HTML5 pages
 
 
