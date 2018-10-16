@@ -142,7 +142,6 @@ KBEngine has many build-in tools to help developers to work easier. They are not
   * The server's underlying framework is written in C++
 
   * The game logic layer uses Python(supports hotfixing)
-
 * **Platforms:**  
   * PS4
   * X-BOX ONE
@@ -160,3 +159,10 @@ KBEngine has many build-in tools to help developers to work easier. They are not
   * Python （When you wants to use the tools provided by the engine）
   * Office 2010 or above (When you wants to use the build-in tool `pyxlsx`)
 * **Testing:**  Most of the tests can be run on the client servers, using C++ or python
+
+
+
+
+
+## Development View
+
