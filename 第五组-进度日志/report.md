@@ -78,7 +78,6 @@ Developers deploy the Kbengine software and try to polish it.
 
 **Competitors:**&nbsp;Undoubtedly, competitors are interested in the development of Kbengine since they are willing to provide a competing service. [Unreal](https://www.unrealengine.com/zh-CN/what-is-unreal-engine-4) and [Unity3D](https://unity3d.com/cn) are two big names with the most users worldwide. The former one is widely viewed as one of the most powerful engine for  and the latter one is suitable for beginners around the world. Nevertheless, when it comes to the game server engine or framework, [POMELO](http://pomelo.netease.com/) and [SKYNET](https://github.com/korialuo/skynet) are two that win most reputation.
 
-
 <a name="fig1"><div align=center>![Figure 1](https://github.com/IchiMaRu0/kbengine/blob/master/%E7%AC%AC%E4%BA%94%E7%BB%84-%E8%BF%9B%E5%BA%A6%E6%97%A5%E5%BF%97/pics/figure1.jpeg)</div></a>
 
 ### Power-Interest Grid  
@@ -118,10 +117,10 @@ KBEngine is an open source game server engine. The client can communicate with t
 
 KBEngine is a server engine, but it can be combined with some client engines to form a complete game client. It is aimed at client development. By using its SDK, what the client developer needs to do is just receiving event data and completing the rendering. Now it supports several of the most popular client engines on the market, including:
 
-* Ogre        [https://www.ogre3d.org/](https://www.ogre3d.org/)
-* Unity3d        [https://unity3d.com](https://unity3d.com)
-* UnrealEngine        https://www.unrealengine.com
-* Cocos2dx        [http://www.cocos.com](http://www.cocos.com)
+* [Ogre](https://www.ogre3d.org/)
+* [Unity3d](https://unity3d.com)
+* [UnrealEngine](https://www.unrealengine.com)
+* [Cocos2dx](http://www.cocos.com)
 * HTML5-based engines or HTML5 pages
 
 
@@ -130,24 +129,25 @@ KBEngine is a server engine, but it can be combined with some client engines to 
 
 KBEngine has many build-in tools to help developers to work easier. They are not dependencies in the sense that KBEngine cannot work without them, but can be thought of as additional features of  this project:
 
-* `Installer Installation Assistant`:  A simple Python scripting tool that can install, uninstall, update and review versions, etc.
+* `Installation Assistant`:  A simple Python scripting tool that can install, uninstall, update and review versions, etc.
 * Excel Tool - `pyxlsx`:  It provides the artifacts for planning, you can output the excel file, which is produced in a certain format, into the .py file used by the server and the .json file used by the client.
+* Interfaces:  Support third party functions.
+* Logger:  Collect and backup runtime logs of different components. 
+
 * Debug Tools
   * GUIConsole
   * WebConsole
   * PyCluster
-  * bots
+  * bots: For pressure tests
 
 
 
 ### Other External Entities
 
 * **Developing languages:**
-
   * The server's underlying framework is written in C++
 
   * The game logic layer uses Python(supports hotfixing)
-
 * **Platforms:**  
   * PS4
   * X-BOX ONE
@@ -167,11 +167,51 @@ KBEngine has many build-in tools to help developers to work easier. They are not
 * **Testing:**  Most of the tests can be run on the client servers, using C++ or python
 
 
+
+## Development View
+
+The development view describes the architecture of a project from the viewpoint of the developers. It is responsible for addressing different aspects of the system development process such as code structure and dependencies, build and configuration management of deliverables, system-wide design constraints, and system-wide standards to ensure technical integrity. Here, we will show the development view of KBEngine based on its Module Structure Model and Codeline Model.
+
+
+
+### Module Structure Model
+
+As we mentioned above, KBEngine is a server engine, but it can be combined with some client engines to form a complete game client. From a high-level view, the architecture is divided into three parts: rendering layer, plug-in layer and server. The rendering layer just means the client and it use the *fire/register* function to exchange messages/events with the plug-in layer. The plug-in layer will send the messages it gets from the rendering layer to the server, and the server will response to the client directly.
+
+The high-level architecture is shown in <a href="#fig4">Figure 4</a>.
+
+<a name="fig4"><div align=center>![Figure 4](https://github.com/IchiMaRu0/kbengine/blob/master/%E7%AC%AC%E4%BA%94%E7%BB%84-%E8%BF%9B%E5%BA%A6%E6%97%A5%E5%BF%97/pics/figure4.png)</div></a>
+
+
+
+For details, the codes of KBEngine can be divided into many parts based on their functions:
+
++ **Client:**  The KBEngine provides the framework , a lib file and API for clients to use.
+
++ **Loginapp:**  It is the first connection between the engine and the client, which is used for signing in and signing up.  When a client wants to sign in and use KBEngine, it will interact with the database to verify the identification of the client.
++ **Baseapp:**  It handles entities without space attribute, such as a *labor union* or *auction company*. There is also a special entity `Proxy` kept in Baseapp, which keeps the communication between the server and the clients. 
++ **Cellapp:**  It handles the logic of the game about space and location, such as *AOI*, *Navigate*, *AI* and so on. It also handles entities in the space (with space attribute), such as a room or a scene.
++ **BaseappMgr:**  It coordinates the work between all the Baseapps and keeps the load balance.
++ **CellappMgr:**  It coordinates the work between all the Cellapps and keeps the load balance.
++ **Database:**  The default choice is MySQL.
++ **DBMgr:**  It provides high-performance and multi-threaded data access and is responsible for managing different entities. It also keeps the communication between the database and entity. 
+
+The module structure is shown in <a href="#fig5">Figure 5</a>.
+
+<a name="fig5"><div align=center>![Figure 5](https://github.com/IchiMaRu0/kbengine/blob/master/%E7%AC%AC%E4%BA%94%E7%BB%84-%E8%BF%9B%E5%BA%A6%E6%97%A5%E5%BF%97/pics/figure5.png)</div></a>
+
+Furthermore, what is worth mentioning is that the KBEngine can have many processes of Loginapp, Baseapp and Cellapp but only one of BaseappMgr and CellappMgr. Take the Baseapp as an example, on one hand, each CPU can deal with only one Baseapp and each Baseapp can backup data for others so that a crash of one Baseapp won't affect the whole system. On the other hand，the BaseappMgr will coordinate the work between all the Baseapps and choose one process with little load to use in order to keep load balance. Therefore, by continuously expanding the hardware, the upper limit of the load can also be continuously increased. 
+
+
+
+### Codeline Model
+
+
+
 ## Functional View
 
-The functional view of a system defines the architectural elements that deliver the system’s functionality. This view shows the key functional elements, the external interfaces, and the internal structure of the system. In order to have a clear view of that, the project can be conceptually split into three layers, which can be seen in <a href="#fig4">Figure 4</a>.
+The functional view of a system defines the architectural elements that deliver the system’s functionality. This view shows the key functional elements, the external interfaces, and the internal structure of the system. In order to have a clear view of that, the project can be conceptually split into three layers, which can be seen in <a href="#fig5">Figure 5</a>.
 
-<a name="fig4"><div align=center>![Figure 4](https://github.com/IchiMaRu0/kbengine/blob/master/%E7%AC%AC%E4%BA%94%E7%BB%84-%E8%BF%9B%E5%BA%A6%E6%97%A5%E5%BF%97/pics/figure2.jpeg)</div></a>
 
 ### Loginapp
 
@@ -184,4 +224,4 @@ Functions|Description
 `onLoginAccountQueryResultFromDbmgr`, `onLoginAccountQueryBaseappAddrFromBaseappmgr`, `onDbmgrInitCompleted`| Interact with database so that the request can be verified.
 `onDbmgrInitCompleted`, `importClientMessages`| Complete the interaction and import the messages for later use.
 
-### 
+
