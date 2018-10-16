@@ -117,10 +117,10 @@ KBEngine is an open source game server engine. The client can communicate with t
 
 KBEngine is a server engine, but it can be combined with some client engines to form a complete game client. It is aimed at client development. By using its SDK, what the client developer needs to do is just receiving event data and completing the rendering. Now it supports several of the most popular client engines on the market, including:
 
-* [Ogre][https://www.ogre3d.org/]
-* [Unity3d][https://unity3d.com]
+* [Ogre](https://www.ogre3d.org/)
+* [Unity3d](https://unity3d.com)
 * [UnrealEngine](https://www.unrealengine.com)
-* [Cocos2dx][http://www.cocos.com]
+* [Cocos2dx](http://www.cocos.com)
 * HTML5-based engines or HTML5 pages
 
 
@@ -203,3 +203,8 @@ The module structure is shown in <a href="#fig5">Figure 5</a>.
 <a name="fig5"><div align=center>![Figure 5](https://github.com/IchiMaRu0/kbengine/blob/master/%E7%AC%AC%E4%BA%94%E7%BB%84-%E8%BF%9B%E5%BA%A6%E6%97%A5%E5%BF%97/pics/architecture2.jpg)</div></a>
 
 Furthermore, what is worth mentioning is that the KBEngine can have many processes of Loginapp, Baseapp and Cellapp but only one of BaseappMgr and CellappMgr. Take the Baseapp as an example, on one hand, each CPU can deal with only one Baseapp and each Baseapp can backup data for others so that a crash of one Baseapp won't affect the whole system. On the other hand，the BaseappMgr will coordinate the work between all the Baseapps and choose one process with little load to use in order to keep load balance. Therefore, by continuously expanding the hardware, the upper limit of the load can also be continuously increased. 
+
+
+
+### Codeline Model
+
