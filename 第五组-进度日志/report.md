@@ -182,7 +182,7 @@ As we mentioned above, KBEngine is a server engine, but it can be combined with 
 
 The high-level architecture is shown in <a href="#fig4">Figure 4</a>.
 
-<a name="fig4"><div align=center>![Figure 4]()</div></a>
+<a name="fig4"><div align=center>![Figure 4](https://github.com/IchiMaRu0/kbengine/blob/master/%E7%AC%AC%E4%BA%94%E7%BB%84-%E8%BF%9B%E5%BA%A6%E6%97%A5%E5%BF%97/pics/architecture1.png)</div></a>
 
 
 
@@ -200,6 +200,6 @@ For details, the codes of KBEngine can be divided into many parts based on their
 
 The module structure is shown in <a href="#fig5">Figure 5</a>.
 
-<a name="fig5"><div align=center>![Figure 5]()</div></a>
+<a name="fig5"><div align=center>![Figure 5](https://github.com/IchiMaRu0/kbengine/blob/master/%E7%AC%AC%E4%BA%94%E7%BB%84-%E8%BF%9B%E5%BA%A6%E6%97%A5%E5%BF%97/pics/architecture2.jpg)</div></a>
 
 Furthermore, what is worth mentioning is that the KBEngine can have many processes of Loginapp, Baseapp and Cellapp but only one of BaseappMgr and CellappMgr. Take the Baseapp as an example, on one hand, each CPU can deal with only one Baseapp and each Baseapp can backup data for others so that a crash of one Baseapp won't affect the whole system. On the other hand，the BaseappMgr will coordinate the work between all the Baseapps and choose one process with little load to use in order to keep load balance. Therefore, by continuously expanding the hardware, the upper limit of the load can also be continuously increased. 
