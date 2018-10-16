@@ -165,3 +165,23 @@ KBEngine has many build-in tools to help developers to work easier. They are not
   * Python （When you wants to use the tools provided by the engine）
   * Office 2010 or above (When you wants to use the build-in tool `pyxlsx`)
 * **Testing:**  Most of the tests can be run on the client servers, using C++ or python
+
+
+## Functional View
+
+The functional view of a system defines the architectural elements that deliver the system’s functionality. This view shows the key functional elements, the external interfaces, and the internal structure of the system. In order to have a clear view of that, the project can be conceptually split into three layers, which can be seen in <a href="#fig4">Figure 4</a>.
+
+<a name="fig4"><div align=center>![Figure 4](https://github.com/IchiMaRu0/kbengine/blob/master/%E7%AC%AC%E4%BA%94%E7%BB%84-%E8%BF%9B%E5%BA%A6%E6%97%A5%E5%BF%97/pics/figure2.jpeg)</div></a>
+
+### Loginapp
+
+Functions|Description
+---|:--:
+`onClientActiveTick`, `onAccountActivated`| The client will get informed that the client is actvated.
+`reqCreateAccount`, `onAccountBindedEmail`,`onReqAccountBindEmailAllocCallbackLoginapp`| Create an account and bind with the email.
+`reqAccountResetPassword`| Reset the password.
+`login`| Login.
+`onLoginAccountQueryResultFromDbmgr`, `onLoginAccountQueryBaseappAddrFromBaseappmgr`, `onDbmgrInitCompleted`| Interact with database so that the request can be verified.
+`onDbmgrInitCompleted`, `importClientMessages`| Complete the interaction and import the messages for later use.
+
+### 
