@@ -94,7 +94,7 @@ A context view describes the relationships, dependencies, and the interactions b
 
 
 
-![Figure 3](./pics/Context View Picture.jpg)
+![Figure 3](./pics/figure3.jpg)
 
 ### System Scope
 
