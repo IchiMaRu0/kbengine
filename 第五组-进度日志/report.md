@@ -1,6 +1,6 @@
 # KBEngine- An Open Source MMOG Server    Engine
 
-![kbelogo1](https://github.com/IchiMaRu0/kbengine/blob/master/%E7%AC%AC%E4%BA%94%E7%BB%84-%E8%BF%9B%E5%BA%A6%E6%97%A5%E5%BF%97/pics/logo/kbelogo1.png)
+![kbelogo1](pics/logo/kbelogo1.png)
 
 
 
@@ -78,13 +78,13 @@ Developers deploy the Kbengine software and try to polish it.
 
 **Competitors:**&nbsp;Undoubtedly, competitors are interested in the development of Kbengine since they are willing to provide a competing service. [Unreal](https://www.unrealengine.com/zh-CN/what-is-unreal-engine-4) and [Unity3D](https://unity3d.com/cn) are two big names with the most users worldwide. The former one is widely viewed as one of the most powerful engine for  and the latter one is suitable for beginners around the world. Nevertheless, when it comes to the game server engine or framework, [POMELO](http://pomelo.netease.com/) and [SKYNET](https://github.com/korialuo/skynet) are two that win most reputation.
 
-<a name="fig1"><div align=center>![Figure 1](https://github.com/IchiMaRu0/kbengine/blob/master/%E7%AC%AC%E4%BA%94%E7%BB%84-%E8%BF%9B%E5%BA%A6%E6%97%A5%E5%BF%97/pics/figure1.jpeg)</div></a>
+<a name="fig1"><div align=center>![Figure 1](pics/figure1.jpeg)</div></a>
 
 ### Power-Interest Grid  
 
 The power-interest grid contains the main stakeholder categories, as shown in <a href="#fig2">Figure 2</a>. There is no doubt that the core developer team takes the leading position in the figure. Suppliers like Github are also significant because the open source project highly depends on these third-party dependencies. Whereas, they apparently have little interest in this project. On the contrary, it is the users that have the highest interest while possess the lowest power.   
 
-<a name="fig2"><div align=center>![Figure 2](https://github.com/IchiMaRu0/kbengine/blob/master/%E7%AC%AC%E4%BA%94%E7%BB%84-%E8%BF%9B%E5%BA%A6%E6%97%A5%E5%BF%97/pics/figure2.jpeg)</div></a>
+<a name="fig2"><div align=center>![Figure 2](pics/figure2.jpeg)</div></a>
 
 
 
@@ -182,7 +182,7 @@ As we mentioned above, KBEngine is a server engine, but it can be combined with 
 
 The high-level architecture is shown in <a href="#fig4">Figure 4</a>.
 
-<a name="fig4"><div align=center>![Figure 4](https://github.com/IchiMaRu0/kbengine/blob/master/%E7%AC%AC%E4%BA%94%E7%BB%84-%E8%BF%9B%E5%BA%A6%E6%97%A5%E5%BF%97/pics/figure4.png)</div></a>
+<a name="fig4"><div align=center>![Figure 4](pics/figure4.png)</div></a>
 
 
 
@@ -200,7 +200,7 @@ For details, the codes of KBEngine can be divided into many parts based on their
 
 The module structure is shown in <a href="#fig5">Figure 5</a>.
 
-<a name="fig5"><div align=center>![Figure 5](https://github.com/IchiMaRu0/kbengine/blob/master/%E7%AC%AC%E4%BA%94%E7%BB%84-%E8%BF%9B%E5%BA%A6%E6%97%A5%E5%BF%97/pics/figure5.png)</div></a>
+<a name="fig5"><div align=center>![Figure 5](pics/figure5.png)</div></a>
 
 Furthermore, what is worth mentioning is that the KBEngine can have many processes of Loginapp, Baseapp and Cellapp but only one of BaseappMgr and CellappMgr. Take the Baseapp as an example, on one hand, each CPU can deal with only one Baseapp and each Baseapp can backup data for others so that a crash of one Baseapp won't affect the whole system. On the other hand，the BaseappMgr will coordinate the work between all the Baseapps and choose one process with little load to use in order to keep load balance. Therefore, by continuously expanding the hardware, the upper limit of the load can also be continuously increased. 
 
