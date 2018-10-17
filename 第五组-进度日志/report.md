@@ -242,7 +242,7 @@ The following lines will show you how the source code is organized, tested and m
 
 ​			|- entity_defs			(The definition of the entity.)
 
-​                |-components    (The components of the entity.)
+​				|-components    (The components of the entity.)
 
 ​				|- interfaces		(The definition of the entity’s interface.)
 
@@ -250,7 +250,7 @@ The following lines will show you how the source code is organized, tested and m
 
 ​			|- user_type			(The directory of the user-defined types.)
 
-​            |-login               (The login part.)
+​		|-login               (The login part.)
 
 ​	|- kbe						(The directory of the engine.)
 
@@ -338,7 +338,7 @@ The following lines will show you how the source code is organized, tested and m
 
 ​				|- log4cxx_properties		(Log4cxx configuration.)
 
-​	    |- bin						(Directory of executable files after compilation.)
+​		|- bin						(Directory of executable files after compilation.)
 
 ​			|- server				(Directory of executable files on server after compilation.)
 
