@@ -94,6 +94,10 @@ A context view describes the relationships, dependencies, and the interactions b
 
 
 
+![Context View Picture](.\pics\Context View Picture.jpg)
+
+
+
 ### System Scope
 
 KBEngine is an open source game server engine. The client can communicate with the server through a simple protocol.  It saves developers from having to re-implement common server-side technology, allowing them to concentrate on game logic development, to quickly create a variety of games. It can be applied in:
