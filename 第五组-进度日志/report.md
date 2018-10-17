@@ -94,7 +94,7 @@ A context view describes the relationships, dependencies, and the interactions b
 
 
 
-![Context View Picture](.\pics\Context View Picture.jpg)
+![Context View Picture](./pics/Context View Picture.jpg)
 
 
 
