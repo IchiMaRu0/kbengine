@@ -22,11 +22,11 @@ The engine is written in C++, and saves developers from having to re-implement c
 
 ## Table of Contents
 
-* [Introduction](#Introduction)
-* [Stakeholders](#Stakeholders)
-* [Context View](#Context View)
-* [Development View](#Development View)
-* [Functional View](#Functional View)
+* [Introduction](#introduction)
+* [Stakeholders](#stakeholders)
+* [Context View](#context-view)
+* [Development View](#development-view)
+* [Functional View](#functional-view)
 * ...
 
 
