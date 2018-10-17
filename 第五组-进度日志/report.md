@@ -364,14 +364,33 @@ Functions|Description
 
 Functions|Description
 ---|:--:
-`handleTimeout`,`handleGameTick`,`handleCheckStatusTick`,`handleBackup`,`handleArchive`| Deal with some related interfaces.
+`handleTimeout`, `handleGameTick`, `handleCheckStatusTick`, `handleBackup`, `handleArchive`| Deal with some related interfaces.
 `onCellAppDeath`| Death of a cellapp.
-`onGetEntityAppFromDbmgr`,`onEntityAutoLoadCBFromDBMgr`| Deal with entity from dbmgr.
+`onGetEntityAppFromDbmgr`, `onEntityAutoLoadCBFromDBMgr`| Deal with entity from dbmgr.
 `onClientActiveTick`| Inform client is active.
 `onCreateEntity`| The callback of CreatEntity.
-`createCellEntityInNewSpace`,`restoreSpaceInCell`| Create/Restore the space for entity.
-`createEntityAnywhere`,`onCreateEntityAnywhere`,`createEntityRemotely`,`onCreateEntityRemotely`,`onCreateEntityAnywhereCallback`,`onCreateEntityRemotelyCallback`| Create a baseEntity on a low-load baseapp and their callbacks.
-`createEntityFromDBID`,`createEntityAnywhereFromDBID`,`onGetCreateEntityAnywhereFromDBIDBestBaseappID`,`createEntityAnywhereFromDBIDOtherBaseapp`,`createEntityRemotelyFromDBID`,`createEntityRemotelyFromDBIDOtherBaseapp`| Get the information from database and create a entity.
-`onCreateEntityFromDBIDCallback`,`onCreateEntityAnywhereFromDBIDCallback`,`onCreateEntityAnywhereFromDBIDOtherBaseappCallback`,`onCreateEntityRemotelyFromDBIDCallback`,`onCreateEntityRemotelyFromDBIDOtherBaseappCallback`| The callback of those functions that get the information from database and create a entity.
-`createCellEntity`,`onEntityGetCell`,`onCreateCellFailure`| Create a cellEntity on the specified cell for a baseEntity and the callback of success/failure.
+`createCellEntityInNewSpace`, `restoreSpaceInCell`| Create/Restore the space for entity.
+`createEntityAnywhere`, `onCreateEntityAnywhere`, `createEntityRemotely`, `onCreateEntityRemotely`, `onCreateEntityAnywhereCallback`, `onCreateEntityRemotelyCallback`| Create a baseEntity on a low-load baseapp and their callbacks.
+`createEntityFromDBID`, `createEntityAnywhereFromDBID`, `onGetCreateEntityAnywhereFromDBIDBestBaseappID`, `createEntityAnywhereFromDBIDOtherBaseapp`, `createEntityRemotelyFromDBID`, `createEntityRemotelyFromDBIDOtherBaseapp`| Get the information from database and create a entity.
+`onCreateEntityFromDBIDCallback`, `onCreateEntityAnywhereFromDBIDCallback`, `onCreateEntityAnywhereFromDBIDOtherBaseappCallback`, `onCreateEntityRemotelyFromDBIDCallback`, `onCreateEntityRemotelyFromDBIDOtherBaseappCallback`| The callback of those functions that get the information from database and create a entity.
+`createCellEntity`, `onEntityGetCell`, `onCreateCellFailure`| Create a cellEntity on the specified cell for a baseEntity and the callback of success/failure.
+`createClientProxies`| Inform the client to create an entity corresponding proxy.
+`executeRawDatabaseCommand`, `onExecuteRawDatabaseCommandCB`| Request a database command to dbmgr.
+`onDbmgrInitCompleted`, `onBroadcastBaseAppDataChanged`| Dbmgr send initial information and broadcast changes in global data.
+`registerPendingLogin`, `loginBaseapp`, `logoutBaseapp`, `kickChannel`, `reloginBaseapp`, `loginBaseappFailed`| Register and login and logout and relogin and failue of login.
+`onQueryAccountCBFromDbmgr`| Get the information of account entity from dbmgr.
+`onUpdateDataFromClient`, `onUpdateDataFromClientForControlledEntity`| About update of client.
+`onBackupEntityCellData`| Cellapp backup cell data of entity.
+`forwardMessageToClientFromCellapp`, `forwardMessageToCellappFromCellapp`| Cellapp forwards  messages of entity.
+`incProxicesCount`, `decProxicesCount`, `numProxices`| About proxices.
+`numClients`| Number of clients.
+`charge`, `onChargeCB`| About charging.
+`onVersionNotMatch`, `onScriptVersionNotMatch`| Unmatch of engine version or script.
+`onRequestRestoreCB`, `onRestoreEntitiesOver`, `onRestoreSpaceCellFromOtherBaseapp`| Request restore.
+`importClientMessages`, `importClientEntityDef`| Export client protocol, related definitions.
+`reloadScript`, `onReloadScript`| Reload all scripts.
+`deleteEntityByDBIDCB`, `lookUpEntityByDBIDCB`| Delete or lookup an entity with dbid.
+`reqAccountBindEmail`, `onReqAccountBindEmailCBFromDBMgr`, `onReqAccountBindEmailCBFromBaseappmgr`, `reqAccountNewPassword`, `onReqAccountNewPasswordCB`| Request bind with the email or request reset password.
+
+ 
 
