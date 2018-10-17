@@ -215,133 +215,133 @@ The following lines will show you how the source code is organized, tested and m
 
 |- kbengine							(The root directory.)
 
-​	|- assets						(The default game project asset library, you can add a new asset library through environment variable binding.)
+	|- assets						(The default game project asset library, you can add a new asset library through environment variable binding.)
 
-​		|- res						(All resources.)
+		|- res						(All resources.)
 
-​			|- spaces				(Store resources related to the game scene.)
+			|- spaces				(Store resources related to the game scene.)
 
-​			|- server				(Store the server-related configuration files.)
+			|- server				(Store the server-related configuration files.)
 
-​		|- scripts				(Resources about the game logic.)
+		|- scripts				        (Resources about the game logic.)
 
-​			|- base				(Base’s Python logic.)
+			|- base				        (Base’s Python logic.)
 
-​			|- cell				(Cell’s Python logic.)
+			|- cell				        (Cell’s Python logic.)
 
-​			|- client			    (Client’s Python logic.)
+			|- client			        (Client’s Python logic.)
 
-​			|- bots				(Robot’s Python logic.)
+			|- bots				        (Robot’s Python logic.)
 
-​			|- common			(The common files about logic.)
+			|- common			        (The common files about logic.)
 
-​			|- data				(The data sources about logic.)
+			|- data				        (The data sources about logic.)
 
-​			|- db				(Dbmgr’s extension script.)
+			|- db				        (Dbmgr’s extension script.)
 
-​			|- entity_defs			(The definition of the entity.)
+			|- entity_defs			        (The definition of the entity.)
 
-​				|-components    (The components of the entity.)
+				|-components                    (The components of the entity.)
 
-​				|- interfaces		(The definition of the entity’s interface.)
+				|- interfaces		        (The definition of the entity’s interface.)
 
-​			|- server_common		(The common logic of the server.)
+			|- server_common		        (The common logic of the server.)
 
-​			|- user_type			(The directory of the user-defined types.)
+			|- user_type			        (The directory of the user-defined types.)
 
-​		|-login               (The login part.)
+		|-login                                         (The login part.)
 
-​	|- kbe						(The directory of the engine.)
+	|- kbe						        (The directory of the engine.)
 
-​		|- tools					(The engine tools.)
+		|- tools					(The engine tools.)
 
-​			|- server				(The tools of engine server.)
+			|- server				(The tools of engine server.)
 
-​				|- guiconsole			(Visual console tool.)
+				|- guiconsole			(Visual console tool.)
 
-​				|- install			(The tools to install the engine.)
+				|- install			(The tools to install the engine.)
 
-​				|- pycluster			(Cross-platform cluster Python controlling scripting tool.)
+				|- pycluster			(Cross-platform cluster Python controlling scripting tool.)
 
-​			|- xlsx2py				(Game data table exporting tool.)
+			|- xlsx2py				(Game data table exporting tool.)
 
-​		|- src						(KBEngine source code.)
+		|- src						(KBEngine source code.)
 
-​			|- build				(Makefile common scripts.)
+			|- build				(Makefile common scripts.)
 
-​			|- client				(Client plugin and the directory of examples.)
+			|- client				(Client plugin and the directory of examples.)
 
-​			|- lib					(Every mode’s source code.)
+			|- lib					(Every mode’s source code.)
 
-​				|- client_lib			(Client’s basic and public framework.)
+				|- client_lib			(Client’s basic and public framework.)
 
-​				|- db_mysql			(Mysql’s data.)
+				|- db_mysql			(Mysql’s data.)
 
-​				|- dependencies			(Dependency library.)
+				|- dependencies			(Dependency library.)
 
-​				|- entitydef			(The definition of the entity.)
+				|- entitydef			(The definition of the entity.)
 
-​				|- helper			(Some general and helpful modules.)
+				|- helper			(Some general and helpful modules.)
 
-​				|- math				(Something about maths.)
+				|- math				(Something about maths.)
 
-​				|- navigation			(2D/3D navigation modules.)
+				|- navigation			(2D/3D navigation modules.)
 
-​				|- network			(Network module.)
+				|- network			(Network module.)
 
-​				|- pyscript			(Script plugins.)
+				|- pyscript			(Script plugins.)
 
-​				|- python			(Python source code.)
+				|- python			(Python source code.)
 
-​				|- resmgr			(Resource manager.)
+				|- resmgr			(Resource manager.)
 
-​				|- server			(Server’s public module.)
+				|- server			(Server’s public module.)
 
-​				|- thread			(Multi-threaded module.)
+				|- thread			(Multi-threaded module.)
 
-​				|- xml			(Xml.)
+				|- xml			        (Xml.)
 
-​			|- libs					(*.lib, *.a files after compilation.)
+			|- libs					(*.lib, *.a files after compilation.)
 
-​			|- server				(Server app source code.)
+			|- server				(Server app source code.)
 
-​				|- baseapp			(Baseapp source code.)
+				|- baseapp			(Baseapp source code.)
 
-​				|- baseappmgr			(Baseappmgr source code.)
+				|- baseappmgr			(Baseappmgr source code.)
 
-​				|- cellapp			(Cellapp source code.)
+				|- cellapp			(Cellapp source code.)
 
-​				|- cellappmgr			(Cellappmgr source code.)
+				|- cellappmgr			(Cellappmgr source code.)
 
-​				|- dbmgr			(Dbmgr source code.)
+				|- dbmgr			(Dbmgr source code.)
 
-​				|- loginapp			(Loginapp source code.)
+				|- loginapp			(Loginapp source code.)
 
-​				|- machine			(Machine source code.)
+				|- machine			(Machine source code.)
 
-​				|- tools			(Server helping tool.)
+				|- tools			(Server helping tool.)
 
-​					|- interfaces		(Support third-party billing, third-party account and other interfaces.)
+					|- interfaces		(Support third-party billing, third-party account and other interfaces.)
 
-​					|- bots			(Stress test, virtual client and source code.)
+					|- bots			(Stress test, virtual client and source code.)
 
-​					|- guiconsole		(Visual console tool’s source code.)
+					|- guiconsole		(Visual console tool’s source code.)
 
-​		|- res						(Engine resource directory.)
+		|- res						(Engine resource directory.)
 
-​			|- key					(RSA key.)
+			|- key					(RSA key.)
 
-​			|- scripts				(Python Script library.)
+			|- scripts				(Python Script library.)
 
-​			|- server				(Server engine configuration.)
+			|- server				(Server engine configuration.)
 
-​				|- log4cxx_properties		(Log4cxx configuration.)
+				|- log4cxx_properties		(Log4cxx configuration.)
 
-​		|- bin						(Directory of executable files after compilation.)
+		|- bin						(Directory of executable files after compilation.)
 
-​			|- server				(Directory of executable files on server after compilation.)
+			|- server				(Directory of executable files on server after compilation.)
 
-​	   
+	   
 
 ## Functional View
 
