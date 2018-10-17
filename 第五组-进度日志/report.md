@@ -23,10 +23,10 @@ The engine is written in C++, and saves developers from having to re-implement c
 ## Table of Contents
 
 * [Introduction](#Introduction)
-* Stakeholders
-* Context View
-* Development View
-* Functional View
+* [Stakeholders](#Stakeholders)
+* [Context View](#Context View)
+* [Development View](#Development View)
+* [Functional View](#Functional View)
 * ...
 
 
@@ -34,7 +34,7 @@ The engine is written in C++, and saves developers from having to re-implement c
 
 
 
-## <span id="Introduction">Introduction</span>
+## Introduction
 
 In recent years, the game industry has become more and more popular, and even LOL has become the official game of the Asian Games. With the development of the game, more and more advanced game engines are needed. KBEngine is one of them. KBEngine is an open source MMOG game server engine. The server's underlying framework is written in C++. The game logic layer uses Python (supports hot updates). Developers do not need to repeatedly implement some of the underlying technologies commonly used by game servers to concentrate their energy to the game development level and quickly build a variety of online games. 
 
@@ -345,7 +345,7 @@ The following lines will show you how the source code is organized, tested and m
 
 ## Functional View
 
-The functional view of a system defines the architectural elements that deliver the system’s functionality. This view shows the key functional elements, the external interfaces, and the internal structure of the system. In order to have a clear view of that, the project can be conceptually split into three layers, which can be seen in <a href="#fig5">Figure 5</a>.
+The functional view of a system defines the architectural elements that deliver the system’s functionality. This view shows the key functional elements, the external interfaces, and the internal structure of the system. In order to have a clear view of that, the project can be conceptually split into three layers, which can be seen in <a href="#fig6">Figure 6</a>.
 
 
 ### Loginapp
