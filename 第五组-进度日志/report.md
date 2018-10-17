@@ -223,35 +223,35 @@ The following lines will show you how the source code is organized, tested and m
 
 			|- server				(Store the server-related configuration files.)
 
-		|- scripts				(Resources about the game logic.)
+		|- scripts				        (Resources about the game logic.)
 
-			|- base				(Base’s Python logic.)
+			|- base				        (Base’s Python logic.)
 
-			|- cell				(Cell’s Python logic.)
+			|- cell				        (Cell’s Python logic.)
 
-			|- client			    (Client’s Python logic.)
+			|- client			        (Client’s Python logic.)
 
-			|- bots				(Robot’s Python logic.)
+			|- bots				        (Robot’s Python logic.)
 
-			|- common			(The common files about logic.)
+			|- common			        (The common files about logic.)
 
-			|- data				(The data sources about logic.)
+			|- data				        (The data sources about logic.)
 
-			|- db				(Dbmgr’s extension script.)
+			|- db				        (Dbmgr’s extension script.)
 
-			|- entity_defs			(The definition of the entity.)
+			|- entity_defs			        (The definition of the entity.)
 
-				|-components    (The components of the entity.)
+				|-components                    (The components of the entity.)
 
-				|- interfaces		(The definition of the entity’s interface.)
+				|- interfaces		        (The definition of the entity’s interface.)
 
-			|- server_common		(The common logic of the server.)
+			|- server_common		        (The common logic of the server.)
 
-			|- user_type			(The directory of the user-defined types.)
+			|- user_type			        (The directory of the user-defined types.)
 
-		|-login               (The login part.)
+		|-login                                         (The login part.)
 
-	|- kbe						(The directory of the engine.)
+	|- kbe						        (The directory of the engine.)
 
 		|- tools					(The engine tools.)
 
@@ -299,7 +299,7 @@ The following lines will show you how the source code is organized, tested and m
 
 				|- thread			(Multi-threaded module.)
 
-				|- xml			(Xml.)
+				|- xml			        (Xml.)
 
 			|- libs					(*.lib, *.a files after compilation.)
 
