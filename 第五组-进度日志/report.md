@@ -215,9 +215,9 @@ The following lines will show you how the source code is organized, tested and m
 
 |- kbengine							(The root directory.)
 
-​	|- assets						(The default game project asset library, you can add a new asset library through environment variable binding.)
+	|- assets						(The default game project asset library, you can add a new asset library through environment variable binding.)
 
-​		|- res						(All resources.)
+		|- res						(All resources.)
 
 ​			|- spaces				(Store resources related to the game scene.)
 
