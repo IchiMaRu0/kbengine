@@ -1,6 +1,6 @@
 # KBEngine- An Open Source MMOG Server    Engine
 
-![kbelogo1](https://github.com/IchiMaRu0/kbengine/blob/master/%E7%AC%AC%E4%BA%94%E7%BB%84-%E8%BF%9B%E5%BA%A6%E6%97%A5%E5%BF%97/pics/logo/kbelogo1.png)
+![kbelogo1](pics/logo/kbelogo1.png)
 
 
 
