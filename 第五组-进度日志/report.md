@@ -89,11 +89,11 @@ The power-interest grid contains the main stakeholder categories, as shown in <a
 
 ## Context View
 
-A context view describes the relationships, dependencies, and the interactions between the system and its environment. This view is relevant for the system's architecture and defines the boundaries of the system and how it interacts with external entities across these boundaries. <a href="#pics/Context View Picture.jpg">[Figure 3]()</a> shows the context view of KBEngine.
+A context view describes the relationships, dependencies, and the interactions between the system and its environment. This view is relevant for the system's architecture and defines the boundaries of the system and how it interacts with external entities across these boundaries. [Figure 3](#fig3) shows the context view of KBEngine.
+
+<a name="fig3"><div align=center>![Figure 3](./pics/figure3.jpg)</div></a>
 
 
-
-![Figure 3](./pics/figure3.jpg)
 
 ### System Scope
 
