@@ -393,4 +393,26 @@ Functions|Description
 `reqAccountBindEmail`, `onReqAccountBindEmailCBFromDBMgr`, `onReqAccountBindEmailCBFromBaseappmgr`, `reqAccountNewPassword`, `onReqAccountNewPasswordCB`| Request bind with the email or request reset password.
 
  
+### Cellapp
+
+Functions|Description
+---|:--:
+`handleTimeout`, `handleGameTick`| Deal with some related interfaces.
+`onGetEntityAppFromDbmgr`| Deal with entity from dbmgr.
+`onCreateEntity`| The callback of CreatEntity.
+`executeRawDatabaseCommand`, `onExecuteRawDatabaseCommandCB`| Request a database command to dbmgr.
+`onDbmgrInitCompleted`, `onBroadcastBaseAppDataChanged`| Dbmgr send initial information and broadcast changes in global data.
+`onCreateCellEntityInNewSpaceFromBaseapp`, `onRestoreSpaceInCellFromBaseapp`| BaseEntity request being created in a new space.
+`setSpaceViewer`| Set space viewer.
+`requestRestore`| Request to restore.
+`onDestroyCellEntityFromBaseapp`| Destroy a CellEntity from Baseapp.
+`onEntityCall`, `onRemoteCallMethodFromClient`| Deal with remote calls.
+`onUpdateDataFromClient`, `onUpdateDataFromClientForControlledEntity`| Update data on client.
+`onUpdateGhostPropertys`, `onRemoteRealMethodCall`, `onUpdateGhostVolatileData`| Deal with ghost request.
+`reqBackupEntityCellData`, `reqWriteToDBFromBaseapp`| Backup and write to database.
+`forwardEntityMessageToCellappFromClient`| Forward entity message to cellapp from client.
+`addUpdatable`, `removeUpdatable`| Add/Remove an Updatable object.
+`reloadScript`, `onReloadScript`| Reload all scripts.
+`reqTeleportToCellApp`, `reqTeleportToCellAppCB`, `reqTeleportToCellAppOver`| Request to teleport to its space.
+`pGhostManager`| Get and set the ghost manager.
 
