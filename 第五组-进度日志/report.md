@@ -204,7 +204,7 @@ The **module structure** is shown in <a href="#fig5">Figure 5</a>.
 
 Furthermore, what is worth mentioning is that the KBEngine can have many processes of Loginapp, Baseapp and Cellapp but only one of BaseappMgr and CellappMgr. Take the Baseapp as an example, on one hand, each CPU can deal with only one Baseapp and each Baseapp can backup data for others so that a crash of one Baseapp won't affect the whole system. On the other hand，the BaseappMgr will coordinate the work between all the Baseapps and choose one process with little load to use in order to keep load balance.*We can keep different processes on different machines*. Therefore, by continuously expanding the hardware, the upper limit of the load can also be continuously increased. Some parts can be seen in  <a href="#fig6">Figure 6</a>.
 
-<a name="fig6"><div align=center>![Figure6](pics\baseapp.png)</div></a>
+<a name="fig6"><div align=center>![Figure 6](pics/baseapp.png)</div></a>
 
 
 
@@ -467,9 +467,9 @@ Functions|Description
 
 TODO:
 
-https://github.com/kbengine/kbengine/releases?after=v0.1.12(history versions)
+https://github.com/kbengine/kbengine/releases?after=v0.1.12 (history versions)
 
-https://www.comblockengine.com/docs/1.0/homepage/update-info/(latest version) add Component
+https://www.comblockengine.com/docs/1.0/homepage/update-info/ (latest version) add Component
 
 v0.1.2 first
 
