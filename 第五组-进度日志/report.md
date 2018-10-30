@@ -404,6 +404,7 @@ Functions|Description
 `onLoginAccountQueryResultFromDbmgr`, `onLoginAccountQueryBaseappAddrFromBaseappmgr`, `onDbmgrInitCompleted`| Interact with database so that the request can be verified.
 `onDbmgrInitCompleted`, `importClientMessages`| Complete the interaction and import the messages for later use.
 
+![loginapp_callback](pics/loginapp_callback.png)
 
 ### Baseapp
 
@@ -437,6 +438,7 @@ Functions|Description
 `deleteEntityByDBIDCB`, `lookUpEntityByDBIDCB`| Delete or lookup an entity with dbid.
 `reqAccountBindEmail`, `onReqAccountBindEmailCBFromDBMgr`, `onReqAccountBindEmailCBFromBaseappmgr`, `reqAccountNewPassword`, `onReqAccountNewPasswordCB`| Request bind with the email or request reset password.
 
+![baseapp_callback](pics/baseapp_callback.png)
 
 ### Cellapp
 
@@ -461,8 +463,18 @@ Functions|Description
 `reqTeleportToCellApp`, `reqTeleportToCellAppCB`, `reqTeleportToCellAppOver`| Request to teleport to its space.
 `pGhostManager`| Get and set the ghost manager.
 
+![cellapp_callback](pics/cellapp_callback.png)
 
+### Logger
 
+Function|Description
+---|:--: 
+`onLoggerAppReady`| To get started.
+`onLoggerAppShutDown`| To shutdon the process.
+`onReadyForShutDown`| To make sure whether the logger process is able to end.
+`onLogWrote`| To get and record the log.
+
+![interfaces_callback](pics/interfaces_callback.png)
 ## Evolution Perspective
 
 TODO:
