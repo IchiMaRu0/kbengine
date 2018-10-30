@@ -180,7 +180,7 @@ The development view describes the architecture of a project from the viewpoint 
 
 As we mentioned above, KBEngine is a server engine, but it can be combined with some client engines to form a complete game client. From a high-level view, the architecture is divided into three parts: rendering layer, plug-in layer and server. The rendering layer just means the client and it use the *fire/register* function to exchange messages/events with the plug-in layer. The plug-in layer will send the messages it gets from the rendering layer to the server, and the server will response to the client directly.
 
-The high-level architecture is shown in <a href="#fig4">Figure 4</a>.
+The **high-level architecture** is shown in <a href="#fig4">Figure 4</a>.
 
 <a name="fig4"><div align=center>![Figure 4](pics/figure4.png)</div></a>
 
@@ -198,13 +198,54 @@ For details, the codes of KBEngine can be divided into many parts based on their
 + **Database:**  The default choice is MySQL.
 + **DBMgr:**  It provides high-performance and multi-threaded data access and is responsible for managing different entities. It also keeps the communication between the database and entity. 
 
-The module structure is shown in <a href="#fig5">Figure 5</a>.
+The **module structure** is shown in <a href="#fig5">Figure 5</a>.
 
 <a name="fig5"><div align=center>![Figure 5](pics/figure5.png)</div></a>
 
 Furthermore, what is worth mentioning is that the KBEngine can have many processes of Loginapp, Baseapp and Cellapp but only one of BaseappMgr and CellappMgr. Take the Baseapp as an example, on one hand, each CPU can deal with only one Baseapp and each Baseapp can backup data for others so that a crash of one Baseapp won't affect the whole system. On the other hand，the BaseappMgr will coordinate the work between all the Baseapps and choose one process with little load to use in order to keep load balance.*We can keep different processes on different machines*. Therefore, by continuously expanding the hardware, the upper limit of the load can also be continuously increased. Some parts can be seen in  <a href="#fig6">Figure 6</a>.
 
 <a name="fig6"><div align=center>![Figure6](pics\baseapp.png)</div></a>
+
+
+
+
+
+### Testing Standardization
+
+KBEngine uses many tools for their testing process, including GUIConsole, WebConsole, PyCluster and bots.
+
+The first two tools are located in `kbe/tools/server/guiconsole` and `kbe/tools/server/webconsole`, which can be used for developers to see the current status of process and debug online, just like other debug tools. We do not focus too much on them.  **PyCluster** is a clustering and controlling module based on Python, which is located in `kbe/tools/server/pycluster/cluster_controller.py`. It can be used to search information of the server, start and stop it.
+
+**bots** is a special and important tool in KBEngine. It is quite useful when developers want to connect the client with the server and add the server's functions. The bots are robots that can simulate the connection, communication and operation of the client. It is a lightweight client program that tests the server and the bots have no rendering parts. The engine provides a Python scripting API  and developers can create their own bots easily. By using a small number of bots to simulate the client, developers can quickly test whether the server has business logic bugs.  Then increase the number of bots for pressure testing, test the server's hidden bugs and pressure tolerance.
+
+The script of **bots** is located in `assets/scripts/bots` and the entrance is `kbemain.py`. The contributors to KBEngine on `github` would better use **bots** to test their codes and logic before they create pull requests. Some codes of the user-defined bots are shown below:
+
+```python
+class Account(KBEngine.Entity):
+	def __init__(self):
+		KBEngine.Entity.__init__(self)
+		DEBUG_MSG("Account::__init__:%s." % (self.__dict__))
+		self.base.reqAvatarList()
+	def onReqAvatarList(self, infos):
+		"""
+		defined method.
+		"""
+		DEBUG_MSG("Account:onReqAvatarList::%s" % (list(infos['values'])))
+		self.base.reqCreateAvatar(1, "kbe_bot_%s" % self.id)
+		self.characters = copy.deepcopy(infos["values"])
+	def onCreateAvatarSuccess(self, info):
+		"""
+		defined method.
+		"""
+		DEBUG_MSG("Account:onCreateAvatarSuccess::%s" % (dict(info)))
+	def onCreateAvatarFailed(self, errorCode):
+		"""
+		defined method.
+		"""
+		ERROR_MSG("Account:onCreateAvatarFailed:: errorCode=%i" % (errorCode))
+```
+
+
 
 
 
@@ -423,4 +464,22 @@ Functions|Description
 
 
 ## Evolution Perspective
+
+TODO:
+
+https://github.com/kbengine/kbengine/releases?after=v0.1.12(history versions)
+
+https://www.comblockengine.com/docs/1.0/homepage/update-info/(latest version) add Component
+
+v0.1.2 first
+
+v0.x
+
+v1.x
+
+v1.17 stable
+
+v2.x
+
+v2.3.0 latest
 
