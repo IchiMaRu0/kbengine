@@ -27,7 +27,8 @@ The engine is written in C++, and saves developers from having to re-implement c
 * [Context View](#context-view)
 * [Development View](#development-view)
 * [Functional View](#functional-view)
-* ...
+* [Evolution Perspective](#evolution-perspective)
+* 
 
 
 
@@ -201,7 +202,9 @@ The module structure is shown in <a href="#fig5">Figure 5</a>.
 
 <a name="fig5"><div align=center>![Figure 5](pics/figure5.png)</div></a>
 
-Furthermore, what is worth mentioning is that the KBEngine can have many processes of Loginapp, Baseapp and Cellapp but only one of BaseappMgr and CellappMgr. Take the Baseapp as an example, on one hand, each CPU can deal with only one Baseapp and each Baseapp can backup data for others so that a crash of one Baseapp won't affect the whole system. On the other hand，the BaseappMgr will coordinate the work between all the Baseapps and choose one process with little load to use in order to keep load balance. Therefore, by continuously expanding the hardware, the upper limit of the load can also be continuously increased. 
+Furthermore, what is worth mentioning is that the KBEngine can have many processes of Loginapp, Baseapp and Cellapp but only one of BaseappMgr and CellappMgr. Take the Baseapp as an example, on one hand, each CPU can deal with only one Baseapp and each Baseapp can backup data for others so that a crash of one Baseapp won't affect the whole system. On the other hand，the BaseappMgr will coordinate the work between all the Baseapps and choose one process with little load to use in order to keep load balance.*We can keep different processes on different machines*. Therefore, by continuously expanding the hardware, the upper limit of the load can also be continuously increased. Some parts can be seen in  <a href="#fig6">Figure 6</a>.
+
+<a name="fig6"><div align=center>![Figure6](pics\baseapp.png)</div></a>
 
 
 
@@ -216,132 +219,133 @@ The following lines will show you how the source code is organized, tested and m
 |- kbengine							(The root directory.)
 
 	|- assets						(The default game project asset library, you can add a new asset library through environment variable binding.)
-
+	
 		|- res						(All resources.)
-
+	
 			|- spaces				(Store resources related to the game scene.)
-
+	
 			|- server				(Store the server-related configuration files.)
-
+	
 		|- scripts				        (Resources about the game logic.)
-
+	
 			|- base				        (Base’s Python logic.)
-
+	
 			|- cell				        (Cell’s Python logic.)
-
+	
 			|- client			        (Client’s Python logic.)
-
+	
 			|- bots				        (Robot’s Python logic.)
-
+	
 			|- common			        (The common files about logic.)
-
+	
 			|- data				        (The data sources about logic.)
-
+	
 			|- db				        (Dbmgr’s extension script.)
-
+	
 			|- entity_defs			        (The definition of the entity.)
-
+	
 				|-components                    (The components of the entity.)
-
+	
 				|- interfaces		        (The definition of the entity’s interface.)
-
+	
 			|- server_common		        (The common logic of the server.)
-
+	
 			|- user_type			        (The directory of the user-defined types.)
-
+	
 		|-login                                         (The login part.)
-
+	
 	|- kbe						        (The directory of the engine.)
-
+	
 		|- tools					(The engine tools.)
-
+	
 			|- server				(The tools of engine server.)
-
+	
 				|- guiconsole			(Visual console tool.)
-
+	
 				|- install			(The tools to install the engine.)
-
+	
 				|- pycluster			(Cross-platform cluster Python controlling scripting tool.)
-
+	
 			|- xlsx2py				(Game data table exporting tool.)
-
+	
 		|- src						(KBEngine source code.)
-
+	
 			|- build				(Makefile common scripts.)
-
+	
 			|- client				(Client plugin and the directory of examples.)
-
+	
 			|- lib					(Every mode’s source code.)
-
+	
 				|- client_lib			(Client’s basic and public framework.)
-
+	
 				|- db_mysql			(Mysql’s data.)
-
+	
 				|- dependencies			(Dependency library.)
-
+	
 				|- entitydef			(The definition of the entity.)
-
+	
 				|- helper			(Some general and helpful modules.)
-
+	
 				|- math				(Something about maths.)
-
+	
 				|- navigation			(2D/3D navigation modules.)
-
+	
 				|- network			(Network module.)
-
+	
 				|- pyscript			(Script plugins.)
-
+	
 				|- python			(Python source code.)
-
+	
 				|- resmgr			(Resource manager.)
-
+	
 				|- server			(Server’s public module.)
-
+	
 				|- thread			(Multi-threaded module.)
-
+	
 				|- xml			        (Xml.)
-
+	
 			|- libs					(*.lib, *.a files after compilation.)
-
+	
 			|- server				(Server app source code.)
-
+	
 				|- baseapp			(Baseapp source code.)
-
+	
 				|- baseappmgr			(Baseappmgr source code.)
-
+	
 				|- cellapp			(Cellapp source code.)
-
+	
 				|- cellappmgr			(Cellappmgr source code.)
-
+	
 				|- dbmgr			(Dbmgr source code.)
-
+	
 				|- loginapp			(Loginapp source code.)
-
+	
 				|- machine			(Machine source code.)
-
+	
 				|- tools			(Server helping tool.)
-
+	
 					|- interfaces		(Support third-party billing, third-party account and other interfaces.)
-
+	
 					|- bots			(Stress test, virtual client and source code.)
-
+	
 					|- guiconsole		(Visual console tool’s source code.)
-
+	
 		|- res						(Engine resource directory.)
-
+	
 			|- key					(RSA key.)
-
+	
 			|- scripts				(Python Script library.)
-
+	
 			|- server				(Server engine configuration.)
-
+	
 				|- log4cxx_properties		(Log4cxx configuration.)
-
+	
 		|- bin						(Directory of executable files after compilation.)
-
+	
 			|- server				(Directory of executable files on server after compilation.)
 
-	   
+
+​	   
 
 ## Functional View
 
@@ -392,7 +396,7 @@ Functions|Description
 `deleteEntityByDBIDCB`, `lookUpEntityByDBIDCB`| Delete or lookup an entity with dbid.
 `reqAccountBindEmail`, `onReqAccountBindEmailCBFromDBMgr`, `onReqAccountBindEmailCBFromBaseappmgr`, `reqAccountNewPassword`, `onReqAccountNewPasswordCB`| Request bind with the email or request reset password.
 
- 
+
 ### Cellapp
 
 Functions|Description
@@ -415,4 +419,8 @@ Functions|Description
 `reloadScript`, `onReloadScript`| Reload all scripts.
 `reqTeleportToCellApp`, `reqTeleportToCellAppCB`, `reqTeleportToCellAppOver`| Request to teleport to its space.
 `pGhostManager`| Get and set the ghost manager.
+
+
+
+## Evolution Perspective
 
