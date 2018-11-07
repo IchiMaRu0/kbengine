@@ -477,7 +477,9 @@ Function|Description
 ![interfaces_callback](pics/interfaces_callback.png)
 ## Evolution Perspective
 
-Everything is continuously changing, So is the software development. Software and system are changing all the time. This section analyses the condition of evolution of the KBEngine. The releases will definitely help us understand the process of the development and perfection of KBEngine. We’ll talk about some typical not all changes of the project in detail in this part.
+Everything is continuously changing, So is the software development. Software and system are changing all the time. This section analyses the condition of evolution of the KBEngine. The releases will definitely help us understand the process of the development and perfection of KBEngine. We’ll talk about the first, the last, and some typical not all changes of the project in detail in this part. The following picture shows the process.
+
+![evolution_perspective](pics/evolution_perspective.png)
 
 
 
