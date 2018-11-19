@@ -184,7 +184,7 @@ As we mentioned above, KBEngine is a server engine, but it can be combined with 
 
 The **high-level architecture** is shown in <a href="#fig4">Figure 4</a>.
 
-<a name="fig4"><div align=center>![Figure 4](pics/figure4.png)</div></a>
+<a name="fig4"><div align=center>![Figure 4](pics/Figure4.png)</div></a>
 
 
 
