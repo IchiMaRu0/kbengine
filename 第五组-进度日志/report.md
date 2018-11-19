@@ -28,7 +28,9 @@ The engine is written in C++, and saves developers from having to re-implement c
 * [Development View](#development-view)
 * [Functional View](#functional-view)
 * [Evolution Perspective](#evolution-perspective)
-* 
+* [Technical Debt](#technical-debt)
+* [Conclusion](#conclusion)
+* [Reference](#reference)
 
 
 
@@ -202,7 +204,7 @@ The **module structure** is shown in <a href="#fig5">Figure 5</a>.
 
 <a name="fig5"><div align=center>![Figure 5](pics/figure5.png)</div></a>
 
-Furthermore, what is worth mentioning is that the KBEngine can have many processes of Loginapp, Baseapp and Cellapp but only one of BaseappMgr and CellappMgr. Take the Baseapp as an example, on one hand, each CPU can deal with only one Baseapp and each Baseapp can backup data for others so that a crash of one Baseapp won't affect the whole system. On the other hand，the BaseappMgr will coordinate the work between all the Baseapps and choose one process with little load to use in order to keep load balance.*We can keep different processes on different machines*. Therefore, by continuously expanding the hardware, the upper limit of the load can also be continuously increased. Some parts can be seen in  <a href="#fig6">Figure 6</a>.
+Furthermore, what is worth mentioning is that the KBEngine can have many processes of Loginapp, Baseapp and Cellapp but only one of BaseappMgr and CellappMgr. Take the Baseapp as an example, on one hand, each CPU can deal with only one Baseapp and each Baseapp can backup data for others so that a crash of one Baseapp won't affect the whole system. On the other hand，the BaseappMgr will coordinate the work between all the Baseapps and choose one process with little load to use in order to keep load balance.**We can keep different processes on different machines**. Therefore, by continuously expanding the hardware, the upper limit of the load can also be continuously increased. Some parts can be seen in  <a href="#fig6">Figure 6</a>.
 
 <a name="fig6"><div align=center>![Figure 6](pics/baseapp.png)</div></a>
 
@@ -494,4 +496,26 @@ In 2016, June 27, V0.8.10 appeared. The main changes of function were as followi
 And another release V1.1.0 was posted. In the project, the security of external inbound method access was enhanced. The API documentation was adjusted. Furthermore, the Implements field in the entity def file was changed to Interfaces, compatible with multiple versions.
 
 The latest update is V2.3.0 on October 19, 2018, main changes were these: The developer prevented a reading error resulting from a password being NULL caused by a database merge or migration causes. What’s more, python log hook output optimization was also completed.
+
+
+
+## Technical Debt
+
+
+
+
+
+## Conclusion
+
+
+
+
+
+## Reference
+
+
+
+
+
+
 
