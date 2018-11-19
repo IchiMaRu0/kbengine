@@ -204,6 +204,10 @@ The **module structure** is shown in <a href="#fig5">Figure 5</a>.
 
 <a name="fig5"><div align=center>![Figure 5](pics/figure5.png)</div></a>
 
+
+
+
+
 Furthermore, what is worth mentioning is that the KBEngine can have many processes of Loginapp, Baseapp and Cellapp but only one of BaseappMgr and CellappMgr. Take the Baseapp as an example, on one hand, each CPU can deal with only one Baseapp and each Baseapp can backup data for others so that a crash of one Baseapp won't affect the whole system. On the other hand，the BaseappMgr will coordinate the work between all the Baseapps and choose one process with little load to use in order to keep load balance.**We can keep different processes on different machines**. Therefore, by continuously expanding the hardware, the upper limit of the load can also be continuously increased. Some parts can be seen in  <a href="#fig6">Figure 6</a>.
 
 <a name="fig6"><div align=center>![Figure 6](pics/baseapp.png)</div></a>
@@ -500,6 +504,10 @@ The latest update is V2.3.0 on October 19, 2018, main changes were these: The de
 
 
 ## Technical Debt
+
+This section focuses on the code and testing debt present inside the KBEngine project. The definition of techchnical debt is shown below:
+
+> Technical debt is defined as a concept in programming that reflects the extra development work that arises when code that is easy to implement in the short run is used instead of applying the best overall solution
 
 
 
