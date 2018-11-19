@@ -218,38 +218,16 @@ Furthermore, what is worth mentioning is that the KBEngine can have many process
 
 ### Testing Standardization
 
-KBEngine uses many tools for their testing process, including GUIConsole, WebConsole, PyCluster and bots.
+By standardising the test approaches, technologies and conventions, the overall testing process remains consistent and has a higher pace. In this section, KBEngine's efforts to achieve this are reviewed.
 
-The first two tools are located in `kbe/tools/server/guiconsole` and `kbe/tools/server/webconsole`, which can be used for developers to see the current status of process and debug online, just like other debug tools. We do not focus too much on them.  **PyCluster** is a clustering and controlling module based on Python, which is located in `kbe/tools/server/pycluster/cluster_controller.py`. It can be used to search information of the server, start and stop it.
+KBEngine provides two tools to view logs of server: **GUIConsole** in `kbe/tools/server/guiconsole` and **WebConsole** in `kbe/tools/server/webconsole`. To use it, logger service must be enabled. You can also view the log file directly, which is in `assets/logs`. There are several types of log: **DEBUG**, **WARRING**, **ERROR**, **INFO**, **S_DBG**, **S_ERR**, **S_INFO**. You can get the information of the problem of your project by the logs.
 
-**bots** is a special and important tool in KBEngine. It is quite useful when developers want to connect the client with the server and add the server's functions. The bots are robots that can simulate the connection, communication and operation of the client. It is a lightweight client program that tests the server and the bots have no rendering parts. The engine provides a Python scripting API  and developers can create their own bots easily. By using a small number of bots to simulate the client, developers can quickly test whether the server has business logic bugs.  Then increase the number of bots for pressure testing, test the server's hidden bugs and pressure tolerance.
+For debugging, KBEngine provides tools to debug online using Python commands. **GUIConsole** is only for Windows users, and you can debug directly to deal with Entity. **WebConsole** provides Python Console to connect different components to debug.
 
-The script of **bots** is located in `assets/scripts/bots` and the entrance is `kbemain.py`. The contributors to KBEngine on `github` would better use **bots** to test their codes and logic before they create pull requests. Some codes of the user-defined bots are shown below:
+**PyCluster** in `kbe/tools/server/pycluster/cluster_controller.py` is another tools similar to **WebConsole**. Both of them can query server information, start and close the server, and operate the console.
 
-```python
-class Account(KBEngine.Entity):
-	def __init__(self):
-		KBEngine.Entity.__init__(self)
-		DEBUG_MSG("Account::__init__:%s." % (self.__dict__))
-		self.base.reqAvatarList()
-	def onReqAvatarList(self, infos):
-		"""
-		defined method.
-		"""
-		DEBUG_MSG("Account:onReqAvatarList::%s" % (list(infos['values'])))
-		self.base.reqCreateAvatar(1, "kbe_bot_%s" % self.id)
-		self.characters = copy.deepcopy(infos["values"])
-	def onCreateAvatarSuccess(self, info):
-		"""
-		defined method.
-		"""
-		DEBUG_MSG("Account:onCreateAvatarSuccess::%s" % (dict(info)))
-	def onCreateAvatarFailed(self, errorCode):
-		"""
-		defined method.
-		"""
-		ERROR_MSG("Account:onCreateAvatarFailed:: errorCode=%i" % (errorCode))
-```
+**bots** is a special and important tool in KBEngine. It is quite useful when developers want to connect the client with the server and add the server's functions. The bots are robots that can simulate the connection, communication and operation of the client. It is a lightweight client program that tests the server and the bots have no rendering parts. The engine provides a Python scripting API  and developers can create their own bots easily. By using a small number of bots to simulate the client, developers can quickly test whether the server has business logic bugs.  Then increase the number of bots for pressure testing, test the server's hidden bugs and pressure tolerance. The script of **bots** is located in `assets/scripts/bots` and the entrance is `kbemain.py`. The contributors to KBEngine on `github` would better use **bots** to test their codes and logic before they create pull requests.
+
 
 
 
