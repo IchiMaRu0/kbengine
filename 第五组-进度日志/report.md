@@ -237,7 +237,7 @@ For debugging, KBEngine provides tools to debug online using Python commands. **
 
 The overall structure of codeline is defined as how the code is controlled or designed, where different types of source code exist in that structure, and how it should be maintained and extended over time.
 
-The following table will show you the simple structure of the source code to let you know more about how the project is organized, tested and managed. 
+The following table will show you a simpler structure of the source code to let you know more about how the project is organized, tested and managed. 
 
 | Directory | Descriptions                                                 |
 | --------- | ------------------------------------------------------------ |
