@@ -182,9 +182,9 @@ The development view describes the architecture of a project from the viewpoint 
 
 As we mentioned above, KBEngine is a server engine, but it can be combined with some client engines to form a complete game client. From a high-level view, the architecture is divided into three parts: rendering layer, plug-in layer and server. The rendering layer just means the client and it use the *fire/register* function to exchange messages/events with the plug-in layer. The plug-in layer will send the messages it gets from the rendering layer to the server, and the server will response to the client directly.
 
-The **high-level architecture** is shown in <a href="#fig4">Figure 4</a>.
+The **high-level architecture** is shown in <a href="#fig4">figure 4</a>.
 
-<a name="fig4"><div align=center>![Figure 4](pics/Figure4.png)</div></a>
+<a name="fig4"><div align=center>![Figure 4](pics/ModelStructure.png)</div></a>
 
 
 
