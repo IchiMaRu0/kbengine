@@ -389,25 +389,25 @@ A code smell is a hint that something has gone wrong somewhere in your project. 
 
 Different people or tools have their diverse subjective measures to detect these hints, and in *CodeFactor*, free analysis mainly related to code maintainability is provided.
 
-<center>![](pics/code_rating.png)</center>
+<center> ![](pics/code_rating.png) </center>
 
 As for *CodeFactor*, KBEngine ranks *B+* (8.98/10) and over ten thousand issues are detected. Then let's have a deeper look.
 
-<center>![](pics/codefactor_deeperlook.png)</center>
+<center> ![](pics/codefactor_deeperlook.png) </center>
 
 Obviously, **maintainability** palys a significant role here and considering the issues inside, I find that **838 Unsolved Warning Comments** are apparently serious problems concerning technical debts, among which `# XXX: check errno?` is the most common to see.  
 
-<center>![](pics/maintainability.png)</center>
+<center> ![](pics/maintainability.png) </center>
 
 Apart from that, **complexity** problems are also fierce because there are over 100 **Very Complex Methods**, which means these methods contain too many keywords like ` if, for, while, case, catch, throw, return, ||, &&, ?`. As a result, these methods will be difficult to read and to modify.
 
-<center>![](pics/complexity.png)</center>
+<center> ![](pics/complexity.png) </center>
 
 What's more, I find that in `baseapp.cpp` there are 8  **empty If body** issues. This .cpp file is of great significance in the project because it is in charge of the arrangement of entities in the game and I find that these issues are caused by some current commits. After looking through the updating logs, I make my assumption that developers are recently modifying the core part, entity, of the project to enhance the ability of entity.
 
 Moreover, I check the rate of all the files. Nearly 90% of the total 7105 files are A-level and 2.5% of them are ranked F. Then I find that some lowest ranked files are third-party files like `echarts.js` to implement data visualization and `Python-ast.c` to implement abstract sytnax trees for compiling.
 
-![](pics/F_file.png)
+<center> ![](pics/F_file.png) </center>
 
 ### Functional trade-offs
 
