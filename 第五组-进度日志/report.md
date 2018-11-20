@@ -389,11 +389,10 @@ A code smell is a hint that something has gone wrong somewhere in your project. 
 
 Different people or tools have their diverse subjective measures to detect these hints, and in *CodeFactor*, free analysis mainly related to code maintainability is provided.
 
+<a name="Xxx"><center>![code_rating](pics\code_rating.png)</center></a>
 
-![code_rating](pics/code_rating.png)
 
-
-As for *CodeFactor*, KBEngine ranks **B+** (8.98/10) and over ten thousand issues are detected. Then let's have a deeper look.
+As for *CodeFactor*, KBEngine ranks *B+* (8.98/10) and over ten thousand issues are detected. Then let's have a deeper look.
 
 
 ![codefactor_deeperlook](pics/codefactor_deeperlook.png)
@@ -427,7 +426,7 @@ In this part I look deeper into some of the issues from the *Community*. I notic
 ![UDP](pics/UDP.png)
 
 
-*TCP* is famous as its reliable, ordered, and error-checked delivery of a stream of data, whereas a great number of users have raised more concern about its *retransmission* attribute because that also leads to some frame conflicts. Since some Moba games rely more on the delivery efficiency rather than reliability, *UDP* may be a better choice for KBEngine and we can see KBEngine supports both of them soon. 
+TCP is famous as its reliable, ordered, and error-checked delivery of a stream of data, whereas a great number of users have raised more concern about its *retransmission* attribute because that also leads to some frame conflicts. Since some Moba games rely more on the delivery efficiency rather than reliability, UDP may be a better choice for KBEngine and we can see KBEngine supports both of them soon. 
 
 
 
