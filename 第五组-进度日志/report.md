@@ -390,25 +390,25 @@ A code smell is a hint that something has gone wrong somewhere in your project. 
 Different people or tools have their diverse subjective measures to detect these hints, and in *CodeFactor*, free analysis mainly related to code maintainability is provided.
 
 
-<center> ![code_rating](pics/code_rating.png) </center>
+![code_rating](pics/code_rating.png)
 
 
 As for *CodeFactor*, KBEngine ranks *B+* (8.98/10) and over ten thousand issues are detected. Then let's have a deeper look.
 
 
-<center> ![codefactor_deeperlook](pics/codefactor_deeperlook.png) </center>
+![codefactor_deeperlook](pics/codefactor_deeperlook.png)
 
 
 Obviously, **maintainability** palys a significant role here and considering the issues inside, I find that **838 Unsolved Warning Comments** are apparently serious problems concerning technical debts, among which `# XXX: check errno?` is the most common to see.  
 
 
-<center> ![maintainability](pics/maintainability.png) </center>
+ ![maintainability](pics/maintainability.png)
 
 
 Apart from that, **complexity** problems are also fierce because there are over 100 **Very Complex Methods**, which means these methods contain too many keywords like ` if, for, while, case, catch, throw, return, ||, &&, ?`. As a result, these methods will be difficult to read and to modify.
 
 
-<center> ![complexity](pics/complexity.png) </center>
+ ![complexity](pics/complexity.png) 
 
 
 What's more, I find that in `baseapp.cpp` there are 8  **empty If body** issues. This .cpp file is of great significance in the project because it is in charge of the arrangement of entities in the game and I find that these issues are caused by some current commits. After looking through the updating logs, I make my assumption that developers are recently modifying the core part, entity, of the project to enhance the ability of entity.
@@ -416,7 +416,7 @@ What's more, I find that in `baseapp.cpp` there are 8  **empty If body** issues.
 Moreover, I check the rate of all the files. Nearly 90% of the total 7105 files are A-level and 2.5% of them are ranked F. Then I find that some lowest ranked files are third-party files like `echarts.js` to implement data visualization and `Python-ast.c` to implement abstract sytnax trees for compiling.
 
 
-<center> ![F_file](pics/F_file.png) </center>
+ ![F_file](pics/F_file.png) 
 
 
 ### Functional trade-offs
@@ -424,7 +424,7 @@ Moreover, I check the rate of all the files. Nearly 90% of the total 7105 files 
 In this part I look deeper into some of the issues from the *Community*. I notice a heated discussion about the support of UDP and it has obtained the [official reply](https://bbs.comblockengine.com/forum.php?mod=viewthread&tid=5928) that UDP support is just around the corner. They officially provide users with a vote to make sure which UDP networking library is used.
 
 
-<center>![UDP](pics/UDP.png)</center>
+![UDP](pics/UDP.png)
 
 
 TCP is famous as its reliable, ordered, and error-checked delivery of a stream of data, whereas a great number of users have raised more concern about its *retransmission* attribute because that also leads to some frame conflicts. Since some Moba games rely more on the delivery efficiency rather than reliability, UDP may be a better choice for KBEngine and we can see KBEngine supports both of them soon. 
