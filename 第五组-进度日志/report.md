@@ -372,9 +372,50 @@ And another release V1.1.0 was posted. In the project, **the security of externa
 
 ## Technical Debt
 
-This section focuses on the code and testing debt present inside the KBEngine project. The definition of techchnical debt is shown below:
+This section focuses on some long-trem impacts of trade-offs that are taken during the software development between development and maintainability of the KBEngine project. The definition of techchnical debt according to [Techopedia](https://www.techopedia.com/definition/27913/technical-debt) is shown below:
 
 > Technical debt is defined as a concept in programming that reflects the extra development work that arises when code that is easy to implement in the short run is used instead of applying the best overall solution
+
+### Analysis tools
+
+To get an idea of the current state of technical debt in KBEngine, some code analysis tools are required to get some insights. Since C++ takes the leading position in the project, I must say it's not as easy as thought because most free analysis tools can only have reliable support for Python, JS, Java project rather than C and C++. The most disgusting story happened on [Sonarqube](https://www.sonarqube.org/), one of the most world-famous analysis tools. Admittedly, it's nice and powerful, but it's not until I download, install, configure and run that I get informed that it requires an expensive plug-in to support C++ project.
+
+  Finally, we used [CodeFactor](https://www.codefactor.io). This tool analyzes all project files separately and provides each of them with a rating (from A to F). Code complexity, code issues, and code duplication are examples of metrics that are taken into consideration. This cloud-based analysis tool is easy to execute and offer free access to most of the mainstream programming languages so I feel honored to share this tool with my classmates.
+
+### Code smells
+
+A code smell is a hint that something has gone wrong somewhere in your project. According to Wiki, the definition is shown below:
+>In computer programming, a code smell is any characteristic in the source code of a program that possibly indicates a deeper problem.
+
+Different people or tools have their diverse subjective measures to detect these hints, and in *CodeFactor*, free analysis mainly related to code maintainability is provided.
+
+<center>![](pics/code_rating.png)</center>
+
+As for *CodeFactor*, KBEngine ranks *B+* (8.98/10) and over ten thousand issues are detected. Then let's have a deeper look.
+
+<center>![](pics/codefactor_deeperlook.png)</center>
+
+Obviously, **maintainability** palys a significant role here and considering the issues inside, I find that **838 Unsolved Warning Comments** are apparently serious problems concerning technical debts, among which `# XXX: check errno?` is the most common to see.  
+
+<center>![](pics/maintainability.png)</center>
+
+Apart from that, **complexity** problems are also fierce because there are over 100 **Very Complex Methods**, which means these methods contain too many keywords like ` if, for, while, case, catch, throw, return, ||, &&, ?`. As a result, these methods will be difficult to read and to modify.
+
+<center>![](pics/complexity.png)</center>
+
+What's more, I find that in `baseapp.cpp` there are 8  **empty If body** issues. This .cpp file is of great significance in the project because it is in charge of the arrangement of entities in the game and I find that these issues are caused by some current commits. After looking through the updating logs, I make my assumption that developers are recently modifying the core part, entity, of the project to enhance the ability of entity.
+
+Moreover, I check the rate of all the files. Nearly 90% of the total 7105 files are A-level and 2.5% of them are ranked F. Then I find that some lowest ranked files are third-party files like `echarts.js` to implement data visualization and `Python-ast.c` to implement abstract sytnax trees for compiling.
+
+![](pics/F_file.png)
+
+### Functional trade-offs
+
+In this part I look deeper into some of the issues from the *Community*. I notice a heated discussion about the support of UDP and it has obtained the [official reply](https://bbs.comblockengine.com/forum.php?mod=viewthread&tid=5928) that UDP support is just around the corner. They officially provide users with a vote to make sure which UDP networking library is used.
+
+<center>![](pics/UDP.png)</center>
+
+TCP is famous as its reliable, ordered, and error-checked delivery of a stream of data, whereas a great number of users have raised more concern about its *retransmission* attribute because that also leads to some frame conflicts. Since some Moba games rely more on the delivery efficiency rather than reliability, UDP may be a better choice for KBEngine and we can see KBEngine supports both of them soon. 
 
 
 
