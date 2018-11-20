@@ -389,7 +389,7 @@ A code smell is a hint that something has gone wrong somewhere in your project. 
 
 Different people or tools have their diverse subjective measures to detect these hints, and in *CodeFactor*, free analysis mainly related to code maintainability is provided.
 
-<a name="code_rating"><div align=center>![code_rating](pics\codeRating.png)</div></a>
+<a name="code_rating"><div align=center>![codeRating](pics/codeRating.png)</div></a>
 
 
 As for *CodeFactor*, KBEngine ranks *B+* (8.98/10) and over ten thousand issues are detected. Then let's have a deeper look.
