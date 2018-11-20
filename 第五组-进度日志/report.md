@@ -349,7 +349,7 @@ The value of these releases is to help us understand the process of the developm
 
 
 
-![Evolution_Perspective](pics/Evolution_Perspective.png)
+![Evolution](pics/Evolution.png)
 
 
 
