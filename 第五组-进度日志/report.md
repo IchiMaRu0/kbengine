@@ -237,19 +237,19 @@ For debugging, KBEngine provides tools to debug online using Python commands. **
 
 The overall structure of codeline is defined as how the code is controlled or designed, where different types of source code exist in that structure, and how it should be maintained and extended over time.
 
-The following table will show you a simpler structure of the source code to let you know more about how the project is organized, tested and managed. 
+The following table will show you a simpler structure of the source code to let you know more about how the project is organized, tested and managed. “-” means the primary directory, "--" means the second directory belongs to the primary directory above.
 
 | Directory | Descriptions                                                 |
 | --------- | ------------------------------------------------------------ |
 | -assets   | This is the default game project asset library, you can add a new asset library through environment variable binding. |
-| -res      | Store all resources, including resources related to the game scene and the configuration files. |
-| -scripts  | This is about the resources of the game logic.               |
+| --res     | Store all resources, including resources related to the game scene and the configuration files. |
+| --scripts | This is about the resources of the game logic.               |
 | -docs     | The directory stores the API documentation and a tutorial of the system. |
 | -kbe      | The main part about the engine.                              |
-| -bin      | This directory contains all executable files after compilation. |
-| -res      | Engine Source directory, including python script library, server engine configuration and so on. |
-| -src      | KBEngine’s source code.                                      |
-| -tools    | The engine tools, such as the engine server, visual console tool and so on. |
+| --bin     | This directory contains all executable files after compilation. |
+| --res     | Engine Source directory, including python script library, server engine configuration and so on. |
+| --src     | KBEngine’s source code.                                      |
+| --tools   | The engine tools, such as the engine server, visual console tool and so on. |
 
 
 
