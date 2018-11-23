@@ -233,7 +233,7 @@ For debugging, KBEngine provides tools to debug online using Python commands. **
 
 
 
-### Codeline Model
+### CodeLine Model
 
 The overall structure of codeline is defined as how the code is controlled or designed, where different types of source code exist in that structure, and how it should be maintained and extended over time.
 
@@ -250,14 +250,20 @@ The kbe is the main directory about the engine, which is divided into four direc
 | Directory | Descriptions                                                 |
 | --------- | ------------------------------------------------------------ |
 | -bin      | This directory contains all executable files after compilation. |
-| -res      | Store all resources, including resources related to the game scene and the configuration files. |
+| -res      | Engine Source directory, including python script library, server engine configuration and so on. |
 | -src      | KBEngine’s source code.                                      |
-| -tools    | The engine tools, such as the guiconsole, pycluster, install, xlsx2py which we have mentioned above and so on. |
-| -server   | It is included in the src directory, which contains loginapp, cellapp, baseapp and so on. |
-| -scripts  | It is included in the res directory. This is about the resources of the game logic and python files. |
+| -tools    | The engine tools, such as the engine server, visual console tool and so on. |
 
+The assets is also divided into two directories.
 
+| Directory | Descriptions                                                 |
+| --------- | ------------------------------------------------------------ |
+| -res      | Store all resources, including resources related to the game scene and the configuration files. |
+| -scripts  | This is about the resources of the game logic.               |
 
+The main codeline model is concluded as the following picture:
+
+![CodeLine Model](pics/CodeLine Model.png)
 
 ## Functional View
 
@@ -352,23 +358,25 @@ Everything is continuously changing, So is the software development. Software an
 
 The value of these releases is to help us understand the process of the development and perfection of KBEngine. We'll talk about some typical not all releases of the project in detail. And in these typical releases, we figure out the most important changes and highlight them in the following lines.
 
+**The releases we talk about are from the original project, not from the project we forked, because after we forked, the contributor has released several new versions.** 
+
 
 
 ![Evolution](pics/Evolution.png)
 
 
 
-The first release of the KBEngine project we can find on Github was V0.1.2 on 6 May 2014. **This is the first complete release of the project**. It filled all the previous vacant parts and fixed several issues.
+The first release of the KBEngine project we can find on Github was V0.1.2 on 6 May 2014. **This is the first complete release of the project**. It filled all the previous vacant parts on Github and after this, there are no changes in main structure.
 
-Two months later, on 19 July 2014, another release V0.1.11 was posted. **It fixed a crash in space destruction** and optimize the messagelog service (occupying small memory). Also, multiple message processing and the speed of interaction with the database were optimized.
+Two months later, on 19 July 2014, another release V0.1.11 was posted. **It fixed a crash in space destruction** and optimize the **messagelog** service (occupying small memory). Also, multiple message processing and the speed of interaction with the database were optimized.
 
-At the end of 2014, on 30 Dec 2014, V0.3.0 was released. **This version improved API documentation**. It added functions such as log search and filtering in GUIConsole. Billingsystem changed its name to interfaces, kbmachine changed its name to machine, messagelog changed its name to logger. Also, a default project asset directory ‘assets’ was added.
+At the end of 2014, on 30 Dec 2014, V0.3.0 was released. **This version improved API documentation**. It added functions such as log search and filtering in **GUIConsole**. **Billingsystem** changed its name to **interfaces**, **kbmachine** changed its name to **machine**, **messagelog** changed its name to **logger**.
 
-In 2016, June 27, V0.8.10 appeared. **The main changes of function were as following: The developer significantly improved cellapp performance**. The implementation of the controllerBy mechanism allowed different permissions to control other or own entities. KBEngine.charge series functions no longer used KBEngine.MemoryStream and began to use the fields in the Bytes structure to support DatabaseLength. It also supported packetAlwaysContainLength.
+In 2016, June 27, V0.8.10 appeared. **The main changes of function were as following: The developer significantly improved** **cellapp** **performance**. The implementation of the **controllerBy** mechanism allowed different permissions to control other or own entities. **KBEngine.charge** series functions no longer used **KBEngine.MemoryStream** and began to use the fields in the **Bytes** structure to support **DatabaseLength**. 
 
-And another release V1.1.0 was posted. In the project, **the security of external inbound method access was enhanced**. The API documentation was adjusted. Furthermore, the Implements field in the entity def file was changed to Interfaces, compatible with multiple versions.
+And another release V1.1.0 was posted. In this version, **the security of external inbound method access was enhanced**. The API documentation in directory: kbengine/docs/api was adjusted, **entitiesInRange** can be called after the destruction of other entities. Furthermore, the **Implements** field in the entity **def** file was changed to **Interfaces** to compatible with multiple versions.
 
-**The latest update is V2.3.0** on October 19, 2018, main changes were these: The developer prevented a reading error resulting from a password being NULL caused by a database merge or migration causes. What’s more, python log hook output optimization was also completed.
+**The latest update is V2.3.3** on November 19, 2018. The contributor added **onAttached/onDetached** methods in the client part and configured parameters in Js plugin to support the choice of the protocol of **WSS** and **WS**. 
 
 ## Technical Debt
 
