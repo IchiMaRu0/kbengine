@@ -263,7 +263,7 @@ The assets is also divided into two directories.
 
 The main codeline model is concluded as the following picture:
 
-![CodeLine Model](pics/CodeLine Model.png)
+![CodeLine](pics/CodeLine.png)
 
 ## Functional View
 
