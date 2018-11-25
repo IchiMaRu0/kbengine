@@ -272,6 +272,9 @@ The functional view of a system defines the architectural elements that deliver 
 
 ### Loginapp
 
++ As <a href="#fig5">Figure 5</a> has shown, Loginapp are always focusing on the interaction with the database to verify the identification of the client, so we will also pay attention on this part.
+
+
 Functions|Description
 ---|:--:
 `onClientActiveTick`, `onAccountActivated`| The client will get informed that the client is actvated.
@@ -284,6 +287,8 @@ Functions|Description
 ![loginapp_callback](pics/loginapp_callback.png)
 
 ### Baseapp
+
++ Baseapp handles entities without space attribute and also helps to keep the communication between the server and the clients, so we will look through this part.
 
 Functions|Description
 ---|:--:
@@ -318,6 +323,8 @@ Functions|Description
 ![baseapp_callback](pics/baseapp_callback.png)
 
 ### Cellapp
+
++ Cellapp handles the logic of the game about space and location, so we will pay attention to this part.
 
 Functions|Description
 ---|:--:
