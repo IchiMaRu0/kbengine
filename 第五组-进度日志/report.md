@@ -23,13 +23,43 @@ The engine is written in C++, and saves developers from having to re-implement c
 ## Table of Contents
 
 * [Introduction](#introduction)
+
 * [Stakeholders](#stakeholders)
+
+  + [Overview](#overview)
+  + [Power-Interest Grid](#power-interest-grid)
+
 * [Context View](#context-view)
+
+  + [System Scope](#system-scope)
+
+  + [Client](#client)
+  + [Build-in Tools](#build-in-tools)
+  + [Other External Entities](#other-external-entities)
+
 * [Development View](#development-view)
+
+  + [Module Structure Model](#module-structure-model)
+  + [Testing Standardization](#testing-standardization)
+  + [Codeline Model](#codeline-model)
+
 * [Functional View](#functional-view)
+
+  + [Loginapp](#loginapp)
+  + [Cellapp](#cellapp)
+  + [Baseapp](#baseapp)
+  + [Logger](#logger)
+
 * [Evolution Perspective](#evolution-perspective)
+
 * [Technical Debt](#technical-debt)
+
+  + [Analysis Tools](#analysis-tools)
+  + [Code Smells](#code-smells)
+  + [Functional Trade-offs](#functional-trade-offs)
+
 * [Conclusion](#conclusion)
+
 * [Reference](#reference)
 
 
@@ -218,7 +248,7 @@ Furthermore, what is worth mentioning is that the KBEngine can have many process
 
 ### Testing Standardization
 
-By standardising the test approaches, technologies and conventions, the overall testing process remains consistent and has a higher pace. In this section, KBEngine's efforts to achieve this are reviewed.
+By standardising the test approaches, technologies and conventions, the overall testing process remains consistent and has a higher pace. Testing in KBEngine is quite standardized and automated, it provides many tools which can be used by developers to test their codes.
 
 KBEngine provides two tools to view logs of server: **GUIConsole** in `kbe/tools/server/guiconsole` and **WebConsole** in `kbe/tools/server/webconsole`. To use it, logger service must be enabled. You can also view the log file directly, which is in `assets/logs`. There are several types of log: **DEBUG**, **WARRING**, **ERROR**, **INFO**, **S_DBG**, **S_ERR**, **S_INFO**. You can get the information of the problem of your project by the logs.
 
@@ -270,6 +300,7 @@ The main codeline model is concluded as the following picture:
 The functional view of a system defines the architectural elements that deliver the system’s functionality. This view shows the key functional elements, the external interfaces, and the internal structure of the system. In order to have a clear view of that, the project can be conceptually split into three layers, which can be seen in <a href="#fig5">Figure 5</a> above.
 
 
+
 ### Loginapp
 
 + As <a href="#fig5">Figure 5</a> has shown, Loginapp are always focusing on the interaction with the database to verify the identification of the client, so we will also pay attention on this part.
@@ -285,6 +316,8 @@ Functions|Description
 `onDbmgrInitCompleted`, `importClientMessages`| Complete the interaction and import the messages for later use.
 
 ![loginapp_callback](pics/loginapp_callback.png)
+
+
 
 ### Baseapp
 
@@ -322,6 +355,8 @@ Functions|Description
 
 ![baseapp_callback](pics/baseapp_callback.png)
 
+
+
 ### Cellapp
 
 + Cellapp handles the logic of the game about space and location, so we will pay attention to this part.
@@ -349,6 +384,8 @@ Functions|Description
 
 ![cellapp_callback](pics/cellapp_callback.png)
 
+
+
 ### Logger
 
 Function|Description
@@ -359,6 +396,9 @@ Function|Description
 `onLogWrote`| To get and record the log.
 
 ![interfaces_callback](pics/interfaces_callback.png)
+
+
+
 ## Evolution Perspective
 
 Everything is continuously changing, So is the software development. Software and system are changing all the time. This section analyses the condition of evolution of the KBEngine. 
@@ -385,19 +425,21 @@ And another release V1.1.0 was posted. In this version, **the security of extern
 
 **The latest update is V2.3.3** on November 19, 2018. The contributor added **onAttached/onDetached** methods in the client part and configured parameters in Js plugin to support the choice of the protocol of **WSS** and **WS**. 
 
+
+
 ## Technical Debt
 
 This section focuses on some long-trem impacts of trade-offs that are taken during the software development between development and maintainability of the KBEngine project. The definition of techchnical debt according to [Techopedia](https://www.techopedia.com/definition/27913/technical-debt) is shown below:
 
 > Technical debt is defined as a concept in programming that reflects the extra development work that arises when code that is easy to implement in the short run is used instead of applying the best overall solution
 
-### Analysis tools
+### Analysis Tools
 
-To get an idea of the current state of technical debt in KBEngine, some code analysis tools are required to get some insights. Since C++ takes the leading position in the project, I must say it's not as easy as thought because most free analysis tools can only have reliable support for Python, JS, Java project rather than C and C++. The most disgusting story happened on [Sonarqube](https://www.sonarqube.org/), one of the most world-famous analysis tools. Admittedly, it's nice and powerful, but it's not until I download, install, configure and run that I get informed that it requires an expensive plug-in to support C++ project.
+To get an idea of the current state of technical debt in KBEngine, some code analysis tools are required to get some insights. Since C++ takes the leading position in the project, we must say it's not as easy as thought because most free analysis tools can only have reliable support for Python, JS, Java project rather than C and C++. The most disgusting story happened on [Sonarqube](https://www.sonarqube.org/), one of the most world-famous analysis tools. Admittedly, it's nice and powerful, but it's not until we download, install, configure and run that we get informed that it requires an expensive plug-in to support C++ project.
 
-  Finally, we used [CodeFactor](https://www.codefactor.io). This tool analyzes all project files separately and provides each of them with a rating (from A to F). Code complexity, code issues, and code duplication are examples of metrics that are taken into consideration. This cloud-based analysis tool is easy to execute and offer free access to most of the mainstream programming languages so I feel honored to share this tool with my classmates.
+Finally, we used [CodeFactor](https://www.codefactor.io). This tool analyzes all project files separately and provides each of them with a rating (from A to F). Code complexity, code issues, and code duplication are examples of metrics that are taken into consideration. This cloud-based analysis tool is easy to execute and offer free access to most of the mainstream programming languages so we feel honored to share this tool with my classmates.
 
-### Code smells
+### Code Smells
 
 A code smell is a hint that something has gone wrong somewhere in your project. According to Wiki, the definition is shown below:
 >In computer programming, a code smell is any characteristic in the source code of a program that possibly indicates a deeper problem.
@@ -413,7 +455,7 @@ As for *CodeFactor*, KBEngine ranks *B+* (8.98/10) and over ten thousand issues 
 ![codefactor_deeperlook](pics/codefactor_deeperlook.png)
 
 
-Obviously, **maintainability** palys a significant role here and considering the issues inside, I find that **838 Unsolved Warning Comments** are apparently serious problems concerning technical debts, among which `# XXX: check errno?` is the most common to see.  
+Obviously, **maintainability** palys a significant role here and considering the issues inside, we find that **838 Unsolved Warning Comments** are apparently serious problems concerning technical debts, among which `# XXX: check errno?` is the most common to see.  
 
 
  ![maintainability](pics/maintainability.png)
@@ -425,17 +467,17 @@ Apart from that, **complexity** problems are also fierce because there are over 
  ![complexity](pics/complexity.png) 
 
 
-What's more, I find that in `baseapp.cpp` there are 8  **empty If body** issues. This .cpp file is of great significance in the project because it is in charge of the arrangement of entities in the game and I find that these issues are caused by some current commits. After looking through the updating logs, I make my assumption that developers are recently modifying the core part, entity, of the project to enhance the ability of entity.
+What's more, we find that in `baseapp.cpp` there are 8  **empty If body** issues. This .cpp file is of great significance in the project because it is in charge of the arrangement of entities in the game and we find that these issues are caused by some current commits. After looking through the updating logs, we make our assumption that developers are recently modifying the core part, entity, of the project to enhance the ability of entity.
 
-Moreover, I check the rate of all the files. Nearly 90% of the total 7105 files are A-level and 2.5% of them are ranked F. Then I find that some lowest ranked files are third-party files like `echarts.js` to implement data visualization and `Python-ast.c` to implement abstract sytnax trees for compiling.
+Moreover, we check the rate of all the files. Nearly 90% of the total 7105 files are A-level and 2.5% of them are ranked F. Then we find that some lowest ranked files are third-party files like `echarts.js` to implement data visualization and `Python-ast.c` to implement abstract sytnax trees for compiling.
 
 
  ![F_file](pics/F_file.png) 
 
 
-### Functional trade-offs
+### Functional Trade-offs
 
-In this part I look deeper into some of the issues from the *Community*. I notice a heated discussion about the support of UDP and it has obtained the [official reply](https://bbs.comblockengine.com/forum.php?mod=viewthread&tid=5928) that UDP support is just around the corner. They officially provide users with a vote to make sure which UDP networking library is used.
+In this part we look deeper into some of the issues from the *Community*. We notice a heated discussion about the support of UDP and it has obtained the [official reply](https://bbs.comblockengine.com/forum.php?mod=viewthread&tid=5928) that UDP support is just around the corner. They officially provide users with a vote to make sure which UDP networking library is used.
 
 
 ![UDP](pics/UDP.png)
@@ -445,17 +487,24 @@ TCP is famous as its reliable, ordered, and error-checked delivery of a stream o
 
 
 
-
-
 ## Conclusion
 
+This chapter gives a brief overview of KBEngine. As we have introduced, KBEngine is an outstanding open source MMOG server engine, which can be quickly combined with some clients like Unity3D to form a complete game client. It is written in C++ but allows developers to use Python to concentrate on game logic development and quickly create a variety of games. Just as its slogan 'Just make, well done', it's quite efficient and flexible.
 
+In this report, we start with stakeholders, and how their motives started and keep KBEngine up-and-running. Then we choose three views——context view, development view and functional view to analyze KBEngine detailedly, learning its environment, structure, function and many other aspects. Afterwards, we analyze its evolution and some technical debts. During the process, we have found some advantages and disadvantages of this project, and we have written them in our report above.
+
+The most significant advantage of KBEngine we think is the expansibility. The underlying architecture is designed as a multi-process distributed dynamic load balancing solution. So in theory, by continuously expanding the hardware, the upper limit of the load can also be continuously increased. On the other hand,  the project has many issues as well. As we analyze in chapter Technical Debt, the project has relatively low maintainablitiy. It has many unsolved warning comments and very complex methods which can be simplified. But we don't think they will be  major problems as it still has good performance, and we believe such problems will be gradually improved in the following updates.
+
+What is worth mentioning is that the KBEngine project is developed all by a Chinese team and it’s still being updated. All in all, we believe KBEngine is an amazing game server engine and that it can be more famous and perfect in the nearby future. We recommand it to you sincerely.
 
 
 
 ## Reference
 
-
+1. The official website of KBEngine (https://www.comblockengine.com)
+2. Some tutorials of KBEngine (https://www.aliyun.com/jiaocheng/topic_30650.html)
+3. IT directory for some computer terms (https://www.techopedia.com)
+4. The tool we use to analyze technical debts (https://www.codefactor.io)
 
 
 
