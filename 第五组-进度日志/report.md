@@ -505,8 +505,16 @@ What is worth mentioning is that the KBEngine project is developed all by a Chin
 2. Some tutorials of KBEngine (https://www.aliyun.com/jiaocheng/topic_30650.html)
 3. IT directory for some computer terms (https://www.techopedia.com)
 4. The tool we use to analyze technical debts (https://www.codefactor.io)
-
-
+5. The wiki explanation of Software architecture(https://en.wikipedia.org/wiki/Software_architecture)
+6. The website of a course of University of Alberta(https://zh-tw.coursera.org/courses?query=software%20architecture&start=20)
+7. The official forums of KBEngine(https://bbs.comblockengine.com/)
+8. A report og KBEngine(http://makaidong.com/sessionId/789216_7635813.html)
+9. A basic  tutorial of Software Systems Architecture(https://www.viewpoints-and-perspectives.info/home/viewpoints/)
+10. The source code on Github(https://github.com/kbengine/kbengine)
+11. An introduction of KBEngine on the website of  open_source china(https://www.oschina.net/p/kbengine)
+12. Techopedia's definition of technical debt(https://www.techopedia.com/definition/27913/technical-debt)
+13. A brief introduction of SA document(https://max.book118.com/html/2018/1015/6122135032001223.shtm)
+14. A development diary of games on KBengine(http://gad.qq.com/article/detail/37499)
 
 
 
